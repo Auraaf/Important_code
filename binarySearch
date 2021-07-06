@@ -1,0 +1,32 @@
+vector<int> arr ;
+
+int myInd = -1 ;
+
+void binarySearch(int  l , int r , int x){
+         
+        //cout<<"bin\n" ;
+        if (r >= l){
+     
+            int mid = l + (r - l)/2;
+
+            if ( arr[mid] == x ) {   
+
+                myInd = mid   ; 
+                return  ;
+            }
+ 
+
+            if ( arr[mid] < x){
+            
+                return binarySearch( mid+1, r , x );
+            }
+
+            else {
+            
+                return binarySearch( l, mid-1 , x );
+
+            }            
+        }
+
+        return  ;   
+}
